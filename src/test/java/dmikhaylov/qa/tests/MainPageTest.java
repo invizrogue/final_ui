@@ -1,13 +1,17 @@
 package dmikhaylov.qa.tests;
 
 import dmikhaylov.qa.base.BaseTest;
+
 import static io.qameta.allure.Allure.step;
+
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+
 import static io.qameta.allure.SeverityLevel.*;
+
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -27,7 +31,7 @@ public class MainPageTest extends BaseTest {
     @Severity(BLOCKER)
     @Tags({@Tag("ui")})
     @MethodSource("headMenuProvider")
-    @ParameterizedTest(name="Наличие пунктов меню в заголовке главной страницы")
+    @ParameterizedTest(name = "Наличие пунктов меню в заголовке главной страницы")
     public void verifyElementsOfHeadMenuTest(List<String> items) {
         step("Открываем главную страницу сайта", () -> {
             mailRuPage.openPage();
@@ -41,7 +45,7 @@ public class MainPageTest extends BaseTest {
     @Severity(BLOCKER)
     @Tags({@Tag("ui")})
     @MethodSource("tabsMenuProvider")
-    @ParameterizedTest(name="Наличие пунктов таб-меню в основной части страницы")
+    @ParameterizedTest(name = "Наличие пунктов таб-меню в основной части страницы")
     public void verifyElementsOfTabsMenuTest(List<String> items) {
         step("Открываем главную страницу сайта", () -> {
             mailRuPage.openPage();
@@ -56,7 +60,7 @@ public class MainPageTest extends BaseTest {
     @Owner("dmikhaylov")
     @Severity(BLOCKER)
     @Tags({@Tag("ui")})
-    @ParameterizedTest(name="Проверка: количество основных статей в таб-меню {0} меньше либо равно 15")
+    @ParameterizedTest(name = "Проверка: количество основных статей в таб-меню {0} меньше либо равно 15")
     public void verifySizeOfRegularAutoContentItemsTest(String tabMenu) {
         step("Открываем главную страницу сайта", () -> {
             mailRuPage.openPage();
@@ -95,7 +99,7 @@ public class MainPageTest extends BaseTest {
     @Owner("dmikhaylov")
     @Severity(BLOCKER)
     @Tags({@Tag("ui"), @Tag("modal")})
-    @ParameterizedTest(name="Проверка смены домена на {2} при изменении провайдера на {0}")
+    @ParameterizedTest(name = "Проверка смены домена на {2} при изменении провайдера на {0}")
     public void shouldBeChangeDomainNameByClickingProviderTest(String providerTitle, String provider, String domain) {
         step("Открываем главную страницу сайта", () -> {
             mailRuPage.openPage();

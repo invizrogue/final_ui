@@ -2,18 +2,20 @@ package dmikhaylov.qa.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+
 import java.util.List;
+
 import static com.codeborne.selenide.CollectionCondition.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
 public class MailRuPage {
 
-    final static ElementsCollection headMenu = $$("div.headline div.ph-projects a");
-    final static ElementsCollection tabsMenu = $$("div.tabs a");
-    final static ElementsCollection tabsContent = $$("ul.tabs-content li div.news-item_regular");
-    final static SelenideElement buttonEnter = $x("//button[text()='Войти']");
-    final static SelenideElement buttonCreate = $x("//button[text()='Создать почту']");
+    final private ElementsCollection headMenu = $$("div.headline div.ph-projects a");
+    final private ElementsCollection tabsMenu = $$("div.tabs a");
+    final private ElementsCollection tabsContent = $$("ul.tabs-content li div.news-item_regular");
+    final private SelenideElement buttonEnter = $x("//button[text()='Войти']");
+    final private SelenideElement buttonCreate = $x("//button[text()='Создать почту']");
 
     public MailRuPage openPage() {
         open("/");
